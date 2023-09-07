@@ -7,15 +7,19 @@ export class MedicineInventory{
 
 export abstract class AbstractHttpCommunication
 {
+    
     abstract GetMedicines():Observable<MedicineInventory[]>;
     abstract MedicinesById(medicineId:number):Observable<object>;
+    abstract CategoriesById(categoryId:number):Observable<object>;
+    abstract CategoriesByName(categoryName:string):Observable<object>;
     abstract DeleteMedicines(medicineId:number):Observable<object>;
     abstract AddMedicines(md:MedicineInventory):Observable<object>;
     abstract UpdateMedicines(md:MedicineInventory):Observable<object>;
-    abstract getTokenAndAccessProtectedResource():Observable<HttpResponse<TokenAndRole>>
+   // abstract getTokenAndAccessProtectedResource():Observable<HttpResponse<TokenAndRole>>
     // abstract getMonths():Observable<string[]>;
     
 }
+
 
 @Injectable({providedIn:'root'})
 export class HttpCommunication extends AbstractHttpCommunication{
@@ -28,6 +32,22 @@ export class HttpCommunication extends AbstractHttpCommunication{
         var response = this.client.get(path,{observe:'response'});
         return response;
     }
+    
+
+    override CategoriesById(categoryId: number): Observable<MedicineInventory[]> {
+        let path=`${this.url}/MedicineInventories/ByCategory/${categoryId}`;
+        const headers = { headers: new HttpHeaders({observe: 'response' }) };
+        var result = this.client.get<MedicineInventory[]>(path, headers); // make GET http request
+        return result;
+        
+    }
+
+    override CategoriesByName(categoryName: string): Observable<MedicineInventory[]> {
+        const path = `${this.url}/MedicineInventories/ByCategoryName/${categoryName}`;
+        const headers = { headers: new HttpHeaders({ observe: 'response' }) };
+    
+        return this.client.get<MedicineInventory[]>(path, headers);
+    }
 
     override AddMedicines(md:MedicineInventory):Observable<object>{
         const path=`${this.url}/add`;
@@ -36,14 +56,6 @@ export class HttpCommunication extends AbstractHttpCommunication{
         return result;
     }
 
-    // override getMonths():Observable<string[]>{
-    //     const url='http://localhost:5015/months';
-    //     let token = sessionStorage.getItem('token');
-    //     var bearer = `Bearer ${token}`;
-    //     const headers={headers:new HttpHeaders({observe:'response',Authorization:bearer})};
-    //     var result=this.client.get<string[]>(url,headers);
-    //     return result;
-    // }
 
     override UpdateMedicines(md:MedicineInventory):Observable<object>{
         const path= `${this.url}/update`;
@@ -66,15 +78,15 @@ export class HttpCommunication extends AbstractHttpCommunication{
         return response;
     }
 
-    override getTokenAndAccessProtectedResource():Observable<HttpResponse<TokenAndRole>>{
-        const url='http://localhost:5015/login';
-        var credentials=new AppUserCredentialsModel('Anand','123');
-        const head=new HttpHeaders({'content-type':'application/json'});
-        var result=this.client.post<TokenAndRole>(url,credentials,{headers:head,observe:'response'});
-        return result;
+    // override getTokenAndAccessProtectedResource():Observable<HttpResponse<TokenAndRole>>{
+    //     const url='http://localhost:5015/login';
+    //     var credentials=new AppUserCredentialsModel('Anand','123');
+    //     const head=new HttpHeaders({'content-type':'application/json'});
+    //     var result=this.client.post<TokenAndRole>(url,credentials,{headers:head,observe:'response'});
+    //     return result;
 
 
-    }
+    // }
 
 
     

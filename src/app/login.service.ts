@@ -12,17 +12,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 
-@Injectable()
-export abstract class AbstractSecurityCommunication
-{
-    abstract getTokenAndAccesProtectedResources(userName:string, password:string):Observable<HttpResponse<TokenAndRole>>;
-}
-@Injectable()
-export class LoginService extends AbstractSecurityCommunication{
+
+@Injectable({providedIn:'root'})
+export class LoginService{
   url = "http://localhost:5015"; // check this port in REST API -> Properties -> launchSettings.json
 
-  constructor(private client:HttpClient) {super();}
-  override getTokenAndAccesProtectedResources(userName:string, password:string):Observable<HttpResponse<TokenAndRole>>{
+  constructor(private client:HttpClient) {}
+   getTokenAndAccessProtectedResource(userName:string, password:string):Observable<HttpResponse<TokenAndRole>>{
     const url = `${this.url}/login`;
 
     var credentials = new AppUserCredentialsModel(userName, password);

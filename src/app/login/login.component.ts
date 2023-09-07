@@ -1,35 +1,35 @@
 import { Component } from '@angular/core';
 import { AbstractHttpCommunication } from '../HttpCommunication';
+import { AppUserCredentialsModel, TokenAndRole, LoginService} from '../login.service';
+
+//import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+   selector: 'app-login',
+   templateUrl: './login.component.html',
+   styleUrls: ['./login.component.css']
 })
 
 export class LoginComponent {
-  constructor(private service:AbstractHttpCommunication){}
-  message:string='';
+ message:string='';
+  constructor(private service:LoginService){}
+  
   //months:string[]=[];
-  getToken():void{
-    var observableObj=this.service.getTokenAndAccessProtectedResource();
+  getToken(userid:string, pwd:string):void{
+    var observableObj=this.service.getTokenAndAccessProtectedResource(userid,pwd);
     observableObj.subscribe({
-      next:(result)=>{
+      next:(result: { body: any; })=>{
         var res = JSON.stringify(result.body);
         var output=JSON.parse(res);
         sessionStorage.setItem('token',output.token);
         sessionStorage.setItem('role',output.role);
         alert(JSON.stringify(result.body));
       },
-      error:err=>this.message=err.message
+      error:(err: { message: string; })=>this.message=err.message
     });
   }
-  // getResource():void{
-  //   var observableObj=this.service.getMonths();
-  //   observableObj.subscribe({
-  //     next:result=>this.months=result,
-  //     error:err=>this.message=err.statusText
-  //   });
-  // }
 }
+
+
+
 

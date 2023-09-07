@@ -23,23 +23,9 @@ export class MedComponent {
       });
     }
 
-    // deleteMed(MedicineId:number){
-    //   var confirmation=confirm('Delete Record?');
-    //   if(confirmation==true)
-    //   {
-    //     let observable=this.service.DeleteMedicines(MedicineId);
-    //     observable.subscribe({
-    //       next:(result:any)=>{
-    //         //alert(JSON.stringify(result));
-    //         alert(result.statusText);
-    //         this.getMeds();
-    //       },
-    //       error:err=>this.errors=err.message
-    //     });
+    
 
-    //   }
-    // }
-
+  
     
     deleteMed(MedicineId:number){
       var confirmation=confirm('Delete Record?');
