@@ -32,6 +32,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserModule,HttpClientModule,FormsModule,
     AppRoutingModule,
     NgbModule
+    
   ],
   providers: [{provide:AbstractHttpCommunication, useClass:HttpCommunication}],
   bootstrap: [AppComponent]

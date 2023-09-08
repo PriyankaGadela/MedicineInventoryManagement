@@ -24,7 +24,8 @@ export class LoginComponent {
         var output=JSON.parse(res);
         sessionStorage.setItem('token',output.token);
         sessionStorage.setItem('role',output.role);
-        if(sessionStorage.getItem("role") == "User") {
+        //this.router.navigate(['/med']);
+        if(sessionStorage.getItem("role") == "Manager") {
           this.router.navigate(['/med']);
         }
        // alert(JSON.stringify(result.body));
