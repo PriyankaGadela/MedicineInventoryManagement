@@ -5,15 +5,16 @@ import { MedoperationsComponent } from './medoperations/medoperations.component'
 import { LoginComponent } from './login/login.component';
 import { CategoryComponent } from './category/category.component';
 import { CategorynameComponent } from './categoryname/categoryname.component';
-// import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { NavbarComponent } from './navbar/navbar.component';
 // import { TempformComponent } from 'tempform/tempform.component';
 
 const routes: Routes = [
   {path:'',component:MedComponent},
-  {path:'medoperations',component:MedoperationsComponent},
+  {path:'med',component:MedComponent},
   {path:'login',component:LoginComponent},
   {path:'category',component:CategoryComponent},
-  {path:'categoryname',component:CategorynameComponent}
+  {path:'categoryname',component:CategorynameComponent},
+  {path:'navbar',component:NavbarComponent}
   // {path:'react',component:ReactiveformComponent},
   // {path:'temp',component:TempformComponent}
   

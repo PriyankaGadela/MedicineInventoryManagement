@@ -14,6 +14,7 @@ import { CategoryComponent } from './category/category.component';
 import { FormsModule } from '@angular/forms';
 //import { SearchnameComponent } from './searchname/searchname.component';
 import { CategorynameComponent } from './categoryname/categoryname.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CategorynameComponent } from './categoryname/categoryname.component';
     LoginComponent,
     CategoryComponent,
     //SearchnameComponent,
-    CategorynameComponent
+    CategorynameComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,HttpClientModule,FormsModule,

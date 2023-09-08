@@ -43,7 +43,7 @@ export class HttpCommunication extends AbstractHttpCommunication{
     }
 
     override CategoriesByName(categoryName: string): Observable<MedicineInventory[]> {
-        const path = `${this.url}/MedicineInventories/ByCategoryName/${categoryName}`;
+        const path = `${this.url}/search?searchTerm=${categoryName}`;
         const headers = { headers: new HttpHeaders({ observe: 'response' }) };
     
         return this.client.get<MedicineInventory[]>(path, headers);
