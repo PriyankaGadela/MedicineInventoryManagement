@@ -1,26 +1,27 @@
-<!-- <p>med works!</p>
-<a routerLink="medoperations" >Add or Update Medicine</a>
-<br/>
+<!-- <p>sortlevel works!</p> -->
+<!-- med.component.html -->
+
+ 
+
+<!-- <button (click)="sortMedicines('name')">Sort by Name</button> -->
+<!-- <button (click)="sortMedicines('stocklevel')">Sort by Stock Level</button> -->
+
+ 
+
+<!-- Display the sorted medicines here
 <table>
 <tbody>
 <tr *ngFor="let m of MedicineInventories">
 <td>{{m.medicineId}}</td>
 <td>{{m.medicineName}}</td>
 <td>{{m.categoryId}}</td>
-<td>{{m.expirydate}}</td>
+<td>{{m.expirydate | date:'mediumDate'}}</td>
 <td>{{m.stocklevel}}</td>
 <td>{{m.price}}</td>
-<td>
-<button (click)="deleteMed(m.medicineId)">Delete</button>
-</td>
+       Display medicine details
 </tr>
 </tbody>
-</table>
-<br/>
-<span>{{errors}}</span> -->
-
- 
-
+</table> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +39,7 @@
 <!-- <h1>Medicine Inventory</h1> -->
 <!-- <p>med works!</p> -->
 <!-- <a class="btn btn-primary" routerLink="medoperations">Add or Update Medicine</a> -->
+<button (click)="sortMedicines('stocklevel')">Sort by Stock Level</button>
 <br>
 <table class="table table-striped">
 <thead>

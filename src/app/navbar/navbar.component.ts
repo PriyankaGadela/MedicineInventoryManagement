@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MedicineInventory } from '../HttpCommunication';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  MedicineInventories!: MedicineInventory[];
+  errors!: string;
   isLoggedIn: string | null = "";
   loginrole: string | null = "";
   constructor(private router: Router,){}

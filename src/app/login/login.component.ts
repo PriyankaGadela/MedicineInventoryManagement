@@ -3,7 +3,11 @@ import { Router } from '@angular/router';
 import { AbstractHttpCommunication } from '../HttpCommunication';
 import { AppUserCredentialsModel, TokenAndRole, LoginService} from '../login.service';
 
+ 
+
 //import { Router } from '@angular/router';
+
+ 
 
 @Component({
    selector: 'app-login',
@@ -11,10 +15,12 @@ import { AppUserCredentialsModel, TokenAndRole, LoginService} from '../login.ser
    styleUrls: ['./login.component.css']
 })
 
+ 
+
 export class LoginComponent {
- message:string='';
+message:string='';
   constructor(private service:LoginService,private router:Router){}
-  
+
   //months:string[]=[];
   getToken(userid:string, pwd:string):void{
     var observableObj=this.service.getTokenAndAccessProtectedResource(userid,pwd);
@@ -24,10 +30,10 @@ export class LoginComponent {
         var output=JSON.parse(res);
         sessionStorage.setItem('token',output.token);
         sessionStorage.setItem('role',output.role);
-        //this.router.navigate(['/med']);
-        if(sessionStorage.getItem("role") == "Manager") {
-          this.router.navigate(['/med']);
-        }
+        this.router.navigate(['med']);
+        // if(sessionStorage.getItem("role") == "Manager") {
+        //   this.router.navigate(['/operations']);
+        // }
        // alert(JSON.stringify(result.body));
       },
       error:(err: { message: string; })=>this.message=err.message

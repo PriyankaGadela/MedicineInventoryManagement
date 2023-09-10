@@ -15,6 +15,13 @@ import { FormsModule } from '@angular/forms';
 //import { SearchnameComponent } from './searchname/searchname.component';
 import { CategorynameComponent } from './categoryname/categoryname.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { OperationsComponent } from './operations/operations.component';
+import { StocklevelComponent } from './stocklevel/stocklevel.component';
+import { ExpiryComponent } from './expiry/expiry.component';
+import { DeleteComponent } from './delete/delete.component';
+import { AccessdeniedComponent } from './accessdenied/accessdenied.component';
+import { SortlevelComponent } from './sortlevel/sortlevel.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +33,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     CategoryComponent,
     //SearchnameComponent,
     CategorynameComponent,
-    NavbarComponent
+    NavbarComponent,
+    OperationsComponent,
+    StocklevelComponent,
+    ExpiryComponent,
+    DeleteComponent,
+    SortlevelComponent,
+    SearchComponent
+
   ],
   imports: [
     BrowserModule,HttpClientModule,FormsModule,

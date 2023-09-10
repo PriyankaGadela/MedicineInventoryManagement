@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { AbstractHttpCommunication, MedicineInventory } from '../HttpCommunication';
+
+ 
+
 @Component({
-  selector: 'app-med',
-  templateUrl: './med.component.html',
-  styleUrls: ['./med.component.css']
+  selector: 'app-delete',
+  templateUrl: './delete.component.html',
+  styleUrls: ['./delete.component.css']
 })
-export class MedComponent {
+export class DeleteComponent {
   MedicineInventories!:MedicineInventory[];
   errors!:string;
   MedicineInventory:MedicineInventory;
@@ -23,41 +26,25 @@ export class MedComponent {
       });
     }
 
-
-    // deleteMed(MedicineId:number){
-    //   var confirmation=confirm('Delete Record?');
-    //   if(confirmation==true)
-    //   {
-    //     let observable=this.service.DeleteMedicines(MedicineId);
-    //     observable.subscribe({
-    //       next:(result:any)=>{
-    //         //alert(JSON.stringify(result));
-    //         alert(result.statusText);
-    //         this.getMeds();
-    //       },
-    //       error:err=>this.errors=err.message
-    //     });
+    deleteMed(MedicineId:number){
+      var confirmation=confirm('Delete Record?');
+      if(confirmation==true)
+      {
+        let observable=this.service.DeleteMedicines(MedicineId);
+        observable.subscribe({
+          next:(result:any)=>{
+            //alert(JSON.stringify(result));
+            alert(result.statusText);
+            this.getMeds();
+          },
+          error:err=>this.errors=err.message
+        });
 
  
 
-    //   }
-    // }
+      }
+    }
 
  
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

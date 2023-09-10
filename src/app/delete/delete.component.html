@@ -1,3 +1,4 @@
+<!-- <p>delete works!</p> -->
 <!-- <p>med works!</p>
 <a routerLink="medoperations" >Add or Update Medicine</a>
 <br/>
@@ -56,11 +57,11 @@
 <td>{{m.medicineId}}</td>
 <td>{{m.medicineName}}</td>
 <td>{{m.categoryId}}</td>
-<td>{{m.expirydate | date:'mediumDate'}}</td>
+<td>{{m.expirydate | date:'dd-MMM-yyyy'}}</td>
 <td>{{m.stocklevel}}</td>
 <td>{{m.price}}</td>
 <td>
-<!-- <button class="btn btn-danger" (click)="deleteMed(m.medicineId)">Delete</button> -->
+<button class="btn btn-danger" (click)="deleteMed(m.medicineId)">Delete</button>
 <!-- <button class="btn btn-danger" (click)="deleteMed(m.medicineId)">Delete</button> -->
 </td>
 </tr>
@@ -78,3 +79,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html> -->
+
+ 
