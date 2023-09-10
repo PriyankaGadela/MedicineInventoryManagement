@@ -1,22 +1,25 @@
-<!-- med.component.html -->
-
-<!-- <button (click)="sortMedicines('name')">Sort by Name</button> -->
-<!-- <button (click)="sortMedicines('stocklevel')">Sort by Stock Level</button> -->
-
-<!-- Display the sorted medicines here
+<!-- <p>delete works!</p> -->
+<!-- <p>med works!</p>
+<a routerLink="medoperations" >Add or Update Medicine</a>
+<br/>
 <table>
-  <tbody>
-    <tr *ngFor="let m of MedicineInventories">
-        <td>{{m.medicineId}}</td>
-        <td>{{m.medicineName}}</td>
-        <td>{{m.categoryId}}</td>
-        <td>{{m.expirydate | date:'mediumDate'}}</td>
-        <td>{{m.stocklevel}}</td>
-        <td>{{m.price}}</td>
-       Display medicine details
-    </tr>
-  </tbody>
-</table> -->
+    <tbody>
+        <tr *ngFor="let m of MedicineInventories">
+            <td>{{m.medicineId}}</td>
+            <td>{{m.medicineName}}</td>
+            <td>{{m.categoryId}}</td>
+            <td>{{m.expirydate}}</td>
+            <td>{{m.stocklevel}}</td>
+            <td>{{m.price}}</td>
+            <td>
+                <button (click)="deleteMed(m.medicineId)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<span>{{errors}}</span> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,11 +32,9 @@
 <body>
 
 <div class="container">
-    
     <!-- <h1>Medicine Inventory</h1> -->
     <!-- <p>med works!</p> -->
     <!-- <a class="btn btn-primary" routerLink="medoperations">Add or Update Medicine</a> -->
-    <!-- <button (click)="sortMedicines('stocklevel')">Sort by Stock Level</button> -->
     <br>
     <table class="table table-striped">
         <thead>
@@ -52,11 +53,11 @@
                 <td>{{m.medicineId}}</td>
                 <td>{{m.medicineName}}</td>
                 <td>{{m.categoryId}}</td>
-                <td>{{m.expirydate | date:'mediumDate'}}</td>
+                <td>{{m.expirydate | date:'dd-MMM-yyyy'}}</td>
                 <td>{{m.stocklevel}}</td>
                 <td>{{m.price}}</td>
                 <td>
-                    <!-- <button class="btn btn-danger" (click)="deleteMed(m.medicineId)">Delete</button> -->
+                    <button class="btn btn-danger" (click)="deleteMed(m.medicineId)">Delete</button>
                     <!-- <button class="btn btn-danger" (click)="deleteMed(m.medicineId)">Delete</button> -->
                 </td>
             </tr>
@@ -66,17 +67,11 @@
     <span>{{errors}}</span>
 </div>
 
-<!-- med.component.html -->
-
-<!-- Dropdown for selecting an item -->
-
-
 <!-- Include Bootstrap JS and Popper.js (if needed)
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html> -->
-
 
 

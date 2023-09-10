@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,8 +20,286 @@
             </div>
             <button class="btn btn-primary btn-block"
                 (click)="getToken(uid.value,pwd.value)">Login</button>
-            <button type="submit">Login</button>
+            
         </form>
     </div>
 
-    
+     -->
+
+     
+
+     <!DOCTYPE html>
+     
+     <html lang="en">
+     
+     <head>
+     
+         <meta charset="UTF-8">
+     
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+         <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+     
+         <title>Login Page</title>
+     
+         <style>
+     
+             body {
+     
+                 margin: 0;
+     
+                 padding: 0;
+     
+                 background-color: #f0f8ff; /* Light Blue background */
+     
+                 font-family: 'Inter';
+     
+             }
+     
+      
+     
+             .navbar {
+     
+                 background-color: #18A0FB; /* Ocean Blue navbar */
+     
+                 opacity: 75%;
+     
+                 padding: 10px;
+     
+                 color: white;
+     
+             }
+     
+      
+     
+             .login-container {
+     
+                 display: flex;
+     
+                 justify-content: center;
+     
+                 align-items: center;
+     
+                 height: 90vh;
+     
+             }
+     
+      
+     
+             .login-form {
+     
+                 background: rgba(24, 180, 251); /* White login form */
+     
+                 opacity: 1;
+     
+                 padding: 20px;
+     
+                 border-radius: 10px;
+     
+                 width: 30%;
+     
+                 height: 60%;
+     
+                 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+     
+             }
+     
+             .login-ele{
+     
+                 opacity: 1;
+     
+             }
+     
+             .login-form img {
+     
+                 max-width: 20%;
+     
+                 height: auto;
+     
+                 margin: 0 auto 20px;
+     
+                 display: block;
+     
+             }
+     
+      
+     
+             .form-group {
+     
+                 margin-bottom: 20px;
+     
+             }
+     
+      
+     
+             .form-group label {
+     
+                 display: block;
+     
+                 margin-bottom: 5px;
+     
+             }
+     
+      
+     
+             .form-group input {
+     
+                 border-radius: 50px;
+     
+                 background:white;
+     
+                 padding: 20px; 
+     
+                 margin-top: 10px;
+     
+                 width: 200px;
+     
+                 height: 5px;
+     
+     
+             }
+     
+      
+     
+             .login-button {
+     
+                 background-color: #53B2AB; /* Green login button */
+     
+                 color: white;
+     
+                 padding: 10px 20px;
+     
+                 border: none;
+     
+                 margin-top: 10px;
+     
+                 width: 150px;
+     
+                 border-radius: 25px;
+     
+                 cursor: pointer;
+     
+             }
+     
+      
+     
+             .login-button:hover {
+     
+                 background-color: #009900; /* Darker green on hover */
+     
+             }
+     
+         </style>
+     
+     </head>
+     
+     <body>
+     
+         <div class="navbar">
+     
+             <h1></h1>
+     
+         </div>
+     
+         <div class="login-container">
+     
+             <div class="row">
+     
+                     <div class="col-md-2"></div>
+     
+                     <div class="col-md-6" >
+     
+             <form  action="#" method="post">
+     
+     
+                     <div class="login-ele "  style="width:300px;padding:20px;background-color:#3eb0fc;">
+     
+                         <img src="/assets/img.png" style="margin-left:82px" alt="Logo">
+     
+                         <div class="form-group">
+     
+                             <input type="text" style="margin-left:30px" id="username" name="username" placeholder="username" #uid name="username" required>
+     
+                         </div>
+     
+                         <div class="form-group">
+     
+                             <input type="password" style="margin-left:30px" id="password" name="password" placeholder="Password" #pwd password="password" required>
+     
+                         </div>
+     
+                         <button type="submit" style="margin-left:100px;background-color: #53B2AB;" class="btn btn-primary btn-block"
+     
+                         (click)="getToken(uid.value,pwd.value)">Login</button>
+     
+                     </div>
+     
+     
+             </form>
+     
+         </div>
+     
+         <div class="col-md-4"></div>
+     
+     </div>
+     
+         </div>
+     
+     </body>
+     
+     </html>
+     
+     <!-- <!DOCTYPE html>
+     
+     <html lang="en">
+     
+     <head>
+     
+         <meta charset="UTF-8">
+     
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+         <title>Login</title>
+     
+     </head>
+     
+     <body>
+     
+        <div class="login-container">
+     
+             <img src="/assets/pic.jpg" height="100" width="200" alt="Stethoscope Icon" class="pic">
+     
+             <h2>Login</h2>
+     
+             <form>
+     
+                 <div class="input-container">
+     
+                     <label for="username">Username</label>
+     
+                     <
+     
+                 </div>input type="text"#uid name="username" required>
+     
+                 <div class="input-container">
+     
+                     <label for="password">Password</label>
+     
+                     <input type="password" #pwd name="password" required>
+     
+                 </div>
+     
+                 <button class="btn btn-primary btn-block"
+     
+                     (click)="getToken(uid.value,pwd.value)">Login</button>
+     
+                 <button type="submit">Login</button>
+     
+             </form>
+     
+         </div>
+     
+      
+     
+          -->
+     

@@ -1,3 +1,4 @@
+<!-- <p>sortlevel works!</p> -->
 <!-- med.component.html -->
 
 <!-- <button (click)="sortMedicines('name')">Sort by Name</button> -->
@@ -29,11 +30,10 @@
 <body>
 
 <div class="container">
-    
     <!-- <h1>Medicine Inventory</h1> -->
     <!-- <p>med works!</p> -->
     <!-- <a class="btn btn-primary" routerLink="medoperations">Add or Update Medicine</a> -->
-    <!-- <button (click)="sortMedicines('stocklevel')">Sort by Stock Level</button> -->
+    <button (click)="sortMedicines('stocklevel')">Sort by Stock Level</button>
     <br>
     <table class="table table-striped">
         <thead>
@@ -65,11 +65,6 @@
     <br>
     <span>{{errors}}</span>
 </div>
-
-<!-- med.component.html -->
-
-<!-- Dropdown for selecting an item -->
-
 
 <!-- Include Bootstrap JS and Popper.js (if needed)
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

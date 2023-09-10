@@ -1,2 +1,6 @@
-<app-navbar></app-navbar>
+<ng-container *ngIf="isLoggedIn">
+    <app-navbar></app-navbar>
+  </ng-container>
+
+  
 <router-outlet></router-outlet>

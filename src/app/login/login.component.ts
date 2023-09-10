@@ -24,10 +24,10 @@ export class LoginComponent {
         var output=JSON.parse(res);
         sessionStorage.setItem('token',output.token);
         sessionStorage.setItem('role',output.role);
-        //this.router.navigate(['/med']);
-        if(sessionStorage.getItem("role") == "Manager") {
-          this.router.navigate(['/med']);
-        }
+        this.router.navigate(['med']);
+        // if(sessionStorage.getItem("role") == "Manager") {
+        //   this.router.navigate(['/operations']);
+        // }
        // alert(JSON.stringify(result.body));
       },
       error:(err: { message: string; })=>this.message=err.message

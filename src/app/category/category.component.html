@@ -16,12 +16,22 @@
       <h3>Medicine Inventories</h3>
       <ul>
         <table>
+          <thead>
+            <tr>
+              <th>Medicine ID</th>
+              <th>Medicine Name</th>
+              <th>Category ID</th>
+              <th>Expiry Date</th>
+              <th>Stock Level</th>
+              <th>Price</th>
+            </tr>
+          </thead>
             <tbody>
                 <tr *ngFor="let m of MedicineInventories">
                     <td>{{m.medicineId}}</td>
                         <td>{{m.medicineName}}</td>
                         <td>{{m.categoryId}}</td>
-                        <td>{{m.expirydate}}</td>
+                        <td>{{m.expirydate  | date:'mediumDate' }}</td>
                         <td>{{m.stocklevel}}</td>
                         <td>{{m.price}}</td>
                 </tr>

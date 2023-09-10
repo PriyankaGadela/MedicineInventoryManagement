@@ -6,16 +6,48 @@ import { LoginComponent } from './login/login.component';
 import { CategoryComponent } from './category/category.component';
 import { CategorynameComponent } from './categoryname/categoryname.component';
 import { NavbarComponent } from './navbar/navbar.component';
+//import { OperationsComponent } from './operations/operations.component';
+import { DeleteComponent } from './delete/delete.component';
+import { ExpiryComponent } from './expiry/expiry.component';
+import { AccessdeniedComponent } from './accessdenied/accessdenied.component';
+import { StocklevelComponent } from './stocklevel/stocklevel.component';
+import { SortlevelComponent } from './sortlevel/sortlevel.component';
+import { AddComponent } from './add/add.component';
+import { UpdateComponent } from './update/update.component';
+import { AuthGuard } from './AuthGuard';
 // import { TempformComponent } from 'tempform/tempform.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'login', pathMatch: 'full' },
   {path:'',component:MedComponent},
   {path:'med',component:MedComponent},
   {path:'login',component:LoginComponent},
   {path:'category',component:CategoryComponent},
   {path:'categoryname',component:CategorynameComponent},
-  {path:'navbar',component:NavbarComponent}
-  // {path:'react',component:ReactiveformComponent},
+  {path:'navbar',component:NavbarComponent},
+  {path:'delete',component:DeleteComponent},
+  //{path:'operations',component:OperationsComponent},
+  {path:'expiry',component:ExpiryComponent},
+  {path:'stocklevel',component:StocklevelComponent},
+  {path:'sortlevel',component:SortlevelComponent},
+  {path:'accessdenied',component:AccessdeniedComponent},
+  //{path:'add',component:AddComponent},
+  //{path:'update',component:UpdateComponent},
+  {
+    path: 'add',
+    component: AddComponent,
+    canActivate: [AuthGuard] // Apply the ManagerAuthGuard to protect this route
+  },
+  {
+    path: 'update',
+    component: UpdateComponent,
+    canActivate: [AuthGuard] // Apply the ManagerAuthGuard to protect this route
+  },
+  {
+    path: 'access-denied',
+    component: AccessdeniedComponent // Create this component to display an access denied message
+  }
+
   // {path:'temp',component:TempformComponent}
   
 ];
