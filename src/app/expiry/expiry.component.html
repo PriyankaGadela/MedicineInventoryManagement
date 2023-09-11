@@ -2,7 +2,6 @@
 <div class="container mt-5">
     <h2>Medicines Expiring Next Month</h2>
     <div *ngIf="errors" class="text-danger">{{ errors }}</div>
-<<<<<<< HEAD
     <ul>
       <li *ngFor="let med of expiringMeds">
         {{ med.medicineName }} (Expiry Date: {{ med.expirydate | date: 'mediumDate' }})
@@ -10,11 +9,3 @@
     </ul>
   </div>
   
-=======
-        <ul>
-            <li *ngFor="let med of expiringMeds">
-                    {{ med.medicineName }} (Expiry Date: {{ med.expirydate | date: 'mediumDate' }})
-            </li>
-        </ul>
-    </div>
->>>>>>> 21dffe05151f39f4f6dca31ffba331ea514589f3

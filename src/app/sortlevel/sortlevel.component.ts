@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractHttpCommunication, MedicineInventory } from '../HttpCommunication';
 
-<<<<<<< HEAD
-=======
- 
-
->>>>>>> 21dffe05151f39f4f6dca31ffba331ea514589f3
 @Component({
   selector: 'app-sortlevel',
   templateUrl: './sortlevel.component.html',
@@ -21,22 +16,14 @@ export class SortlevelComponent {
     ngOnInit() {
       this. GetMedicines();
     }
-<<<<<<< HEAD
   
-=======
-
->>>>>>> 21dffe05151f39f4f6dca31ffba331ea514589f3
     GetMedicines(): void {
       this.service. GetMedicines().subscribe({
         next: (result) => (this.MedicineInventories = result),
         error: (err) => (this.errors = err.message),
       });
     }
-<<<<<<< HEAD
   
-=======
-
->>>>>>> 21dffe05151f39f4f6dca31ffba331ea514589f3
     sortMedicines(sortBy: string): void {
       this.service.sortMedicines(sortBy).subscribe({
         next: (result) => (this.MedicineInventories = result),
@@ -44,10 +31,4 @@ export class SortlevelComponent {
       });
     }
 
-<<<<<<< HEAD
 }
-=======
- 
-
-}
->>>>>>> 21dffe05151f39f4f6dca31ffba331ea514589f3
