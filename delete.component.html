@@ -3,7 +3,6 @@
 <a routerLink="medoperations" >Add or Update Medicine</a>
 <br/>
 <table>
-<<<<<<< HEAD
     <tbody>
         <tr *ngFor="let m of MedicineInventories">
             <td>{{m.medicineId}}</td>
@@ -17,26 +16,10 @@
             </td>
         </tr>
     </tbody>
-=======
-<tbody>
-<tr *ngFor="let m of MedicineInventories">
-<td>{{m.medicineId}}</td>
-<td>{{m.medicineName}}</td>
-<td>{{m.categoryId}}</td>
-<td>{{m.expirydate}}</td>
-<td>{{m.stocklevel}}</td>
-<td>{{m.price}}</td>
-<td>
-<button (click)="deleteMed(m.medicineId)">Delete</button>
-</td>
-</tr>
-</tbody>
->>>>>>> 21dffe05151f39f4f6dca31ffba331ea514589f3
 </table>
 <br/>
 <span>{{errors}}</span> -->
 
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,61 +67,6 @@
     <span>{{errors}}</span>
 </div>
 
-=======
- 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medicine Inventory</title>
-<!-- Include Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-
- 
-
-<div class="container">
-<!-- <h1>Medicine Inventory</h1> -->
-<!-- <p>med works!</p> -->
-<!-- <a class="btn btn-primary" routerLink="medoperations">Add or Update Medicine</a> -->
-<br>
-<table class="table table-striped">
-<thead>
-<tr>
-<th>Medicine ID</th>
-<th>Medicine Name</th>
-<th>Category ID</th>
-<th>Expiry Date</th>
-<th>Stock Level</th>
-<th>Price</th>
-<!-- <th>Action</th> -->
-</tr>
-</thead>
-<tbody>
-<tr *ngFor="let m of MedicineInventories">
-<td>{{m.medicineId}}</td>
-<td>{{m.medicineName}}</td>
-<td>{{m.categoryId}}</td>
-<td>{{m.expirydate | date:'dd-MMM-yyyy'}}</td>
-<td>{{m.stocklevel}}</td>
-<td>{{m.price}}</td>
-<td>
-<button class="btn btn-danger" (click)="deleteMed(m.medicineId)">Delete</button>
-<!-- <button class="btn btn-danger" (click)="deleteMed(m.medicineId)">Delete</button> -->
-</td>
-</tr>
-</tbody>
-</table>
-<br>
-<span>{{errors}}</span>
-</div>
-
- 
-
->>>>>>> 21dffe05151f39f4f6dca31ffba331ea514589f3
 <!-- Include Bootstrap JS and Popper.js (if needed)
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
@@ -146,8 +74,4 @@
 </body>
 </html> -->
 
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> 21dffe05151f39f4f6dca31ffba331ea514589f3

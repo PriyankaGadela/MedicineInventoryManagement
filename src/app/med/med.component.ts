@@ -53,10 +53,12 @@ export class MedComponent {
     // }
     
 
-    
 
+<<<<<<< HEAD
   
     
+=======
+>>>>>>> 21dffe05151f39f4f6dca31ffba331ea514589f3
     // deleteMed(MedicineId:number){
     //   var confirmation=confirm('Delete Record?');
     //   if(confirmation==true)
@@ -71,10 +73,20 @@ export class MedComponent {
     //       error:err=>this.errors=err.message
     //     });
 
+<<<<<<< HEAD
+    //   }
+    // }
+=======
+ 
+
     //   }
     // }
 
+ 
+>>>>>>> 21dffe05151f39f4f6dca31ffba331ea514589f3
+
 }
+
 
 
 

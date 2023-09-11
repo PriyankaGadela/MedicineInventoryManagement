@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 //import { SearchnameComponent } from './searchname/searchname.component';
 import { CategorynameComponent } from './categoryname/categoryname.component';
 import { NavbarComponent } from './navbar/navbar.component';
+<<<<<<< HEAD
 //import { OperationsComponent } from './operations/operations.component';
 import { DeleteComponent } from './delete/delete.component';
 import { ExpiryComponent } from './expiry/expiry.component';
@@ -28,6 +29,15 @@ import { UpdateComponent } from './update/update.component';
 
 // library.add(fas);
 
+=======
+import { OperationsComponent } from './operations/operations.component';
+import { StocklevelComponent } from './stocklevel/stocklevel.component';
+import { ExpiryComponent } from './expiry/expiry.component';
+import { DeleteComponent } from './delete/delete.component';
+import { AccessdeniedComponent } from './accessdenied/accessdenied.component';
+import { SortlevelComponent } from './sortlevel/sortlevel.component';
+import { SearchComponent } from './search/search.component';
+>>>>>>> 21dffe05151f39f4f6dca31ffba331ea514589f3
 
 @NgModule({
   declarations: [
@@ -40,6 +50,7 @@ import { UpdateComponent } from './update/update.component';
     //SearchnameComponent,
     CategorynameComponent,
     NavbarComponent,
+<<<<<<< HEAD
     //OperationsComponent,
     DeleteComponent,
     ExpiryComponent,
@@ -48,6 +59,15 @@ import { UpdateComponent } from './update/update.component';
     SortlevelComponent,
     AddComponent,
     UpdateComponent
+=======
+    OperationsComponent,
+    StocklevelComponent,
+    ExpiryComponent,
+    DeleteComponent,
+    SortlevelComponent,
+    SearchComponent
+
+>>>>>>> 21dffe05151f39f4f6dca31ffba331ea514589f3
   ],
   imports: [
     BrowserModule,HttpClientModule,FormsModule,

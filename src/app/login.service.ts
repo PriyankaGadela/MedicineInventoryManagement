@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({providedIn:'root'})
 export class LoginService{
-  url = "http://localhost:5015"; // check this port in REST API -> Properties -> launchSettings.json
+  url = "http://localhost:5146"; // check this port in REST API -> Properties -> launchSettings.json
 
   constructor(private client:HttpClient) {}
    getTokenAndAccessProtectedResource(userName:string, password:string):Observable<HttpResponse<TokenAndRole>>{
