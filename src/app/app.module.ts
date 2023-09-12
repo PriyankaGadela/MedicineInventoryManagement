@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { CategoryComponent } from './category/category.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { SearchnameComponent } from './searchname/searchname.component';
 import { CategorynameComponent } from './categoryname/categoryname.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -23,6 +23,8 @@ import { AccessdeniedComponent } from './accessdenied/accessdenied.component';
 import { SortlevelComponent } from './sortlevel/sortlevel.component';
 import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
+import { OledbComponent } from './oledb/oledb.component';
+import { SignupComponent } from './signup/signup.component';
 // import { library } from '@fortawesome/fontawesome-svg-core';
 // import { fas } from '@fortawesome/free-solid-svg-icons';
 
@@ -47,10 +49,12 @@ import { UpdateComponent } from './update/update.component';
     AccessdeniedComponent,
     SortlevelComponent,
     AddComponent,
-    UpdateComponent
+    UpdateComponent,
+    OledbComponent,
+    SignupComponent
   ],
   imports: [
-    BrowserModule,HttpClientModule,FormsModule,
+    BrowserModule,HttpClientModule,FormsModule,ReactiveFormsModule,
     AppRoutingModule,
     NgbModule
     

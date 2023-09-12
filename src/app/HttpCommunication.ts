@@ -21,7 +21,12 @@ export abstract class AbstractHttpCommunication
     abstract GetMedicinesExpiringNextMonth(): Observable<MedicineInventory[]>;
     abstract GetMedicinesReachingCriticalStock(criticalStockLevel: number): Observable<MedicineInventory[]>;
     abstract sortMedicines(sortBy: string): Observable<MedicineInventory[]>;
-
+    abstract ReadOleDbData(): Observable<MedicineInventory[]>;
+    abstract SignUp(
+        userName: string,
+        password: string,
+        role: string
+      ): Observable<object>;
    // abstract getTokenAndAccessProtectedResource():Observable<HttpResponse<TokenAndRole>>
     // abstract getMonths():Observable<string[]>;
 
@@ -30,7 +35,7 @@ export abstract class AbstractHttpCommunication
 
 @Injectable({providedIn:'root'})
 export class HttpCommunication extends AbstractHttpCommunication{
-    url='http://localhost:5146';
+    url='http://localhost:5015';
     constructor(private client:HttpClient){ super();}
     override MedicinesById(medicineId: number): Observable<object> {
         let path=`${this.url}/Id/${medicineId}`;
@@ -81,6 +86,20 @@ export class HttpCommunication extends AbstractHttpCommunication{
         
         return result;
     }
+    override SignUp(
+        userName: string,
+        password: string,
+        role: string,
+      ): Observable<object> {
+        const url = `${this.url}/SignUp/${userName}/${password}/${role}`;
+        const headers = new HttpHeaders({ 'content-type': 'application/json' });
+        var result = this.client.post(url, {
+          headers: headers,
+          observe: 'response',
+        });
+        alert(result);
+        return result;
+      }
     override sortMedicines(sortBy: string): Observable<MedicineInventory[]> {
         const path = `${this.url}/MedicineInventories/Sorting?sortBy=${sortBy}`;
         const headers = { headers: new HttpHeaders({ observe: "response" }) };
@@ -105,6 +124,12 @@ export class HttpCommunication extends AbstractHttpCommunication{
       
         return this.client.get<MedicineInventory[]>(path, headers);
     }
+    override ReadOleDbData(): Observable<MedicineInventory[]> {
+        const path = `${this.url}/ReadExcel`; // Adjust the endpoint as needed
+        const headers = { headers: new HttpHeaders({ observe: "response" }) };
+        return this.client.get<MedicineInventory[]>(path, headers);
+      }
+    
     
       
 

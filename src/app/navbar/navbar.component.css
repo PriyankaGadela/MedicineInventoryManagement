@@ -44,7 +44,7 @@ input[type="search"]:focus {
     margin: 0;
   }
    */
-  .container {
+  /* .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,4 +97,8 @@ input[type="search"]:focus {
     box-shadow: 0 0 3px 0 #fff;
     border-color: #fff;
     outline: none;
-  }
+  } */
+
+  .nav-item .custom-dark-link  {
+    color: #000 !important; /* Replace #333 with your desired dark color code */
+}

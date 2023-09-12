@@ -1,0 +1,56 @@
+<!-- <p>oledb works!</p> -->
+<!-- <div class="container"> -->
+    <!-- <h2>Read Excel Data</h2>
+    <div class="form-group">
+      <label for="excelPath">Excel File Path:</label>
+      <input type="text" class="form-control" [(ngModel)]="path" id="excelPath" placeholder="Enter Excel file path">
+    </div>
+    <button class="btn btn-primary" (click)="readExcel()">Read Excel Data</button>
+    <div class="result">
+      <p>{{ resultMessage }}</p>
+    </div> -->
+
+
+  <!-- </div> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+ 
+
+<div class="container">
+    
+    <!-- <h1>Medicine Inventory</h1> -->
+    <!-- <p>med works!</p> -->
+    <!-- <a class="btn btn-primary" routerLink="medoperations">Add or Update Medicine</a> -->
+    <!-- <button (click)="sortMedicines('stocklevel')">Sort by Stock Level</button> -->
+    <br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Medicine ID</th>
+                <th>Medicine Name</th>
+                <th>Category ID</th>
+                <th>Expiry Date</th>
+                <th>Stock Level</th>
+                <th>Price</th>
+                <!-- <th>Action</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let m of inventory">
+                <td>{{m.medicineId}}</td>
+                <td>{{m.medicineName}}</td>
+                <td>{{m.categoryId}}</td>
+                <td>{{m.expirydate | date:'mediumDate'}}</td>
+                <td>{{m.stocklevel}}</td>
+                <td>{{m.price}}</td>
+                <td>
+                    <!-- <button class="btn btn-danger" (click)="deleteMed(m.medicineId)">Delete</button> -->
+                    <!-- <button class="btn btn-danger" (click)="deleteMed(m.medicineId)">Delete</button> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <span>{{resultMessage}}</span>
+</div>
+  

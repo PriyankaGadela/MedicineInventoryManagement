@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { CategoryComponent } from './category/category.component';
 import { CategorynameComponent } from './categoryname/categoryname.component';
 import { NavbarComponent } from './navbar/navbar.component';
-//import { OperationsComponent } from './operations/operations.component';
+import { OledbComponent } from './oledb/oledb.component';
 import { DeleteComponent } from './delete/delete.component';
 import { ExpiryComponent } from './expiry/expiry.component';
 import { AccessdeniedComponent } from './accessdenied/accessdenied.component';
@@ -15,6 +15,7 @@ import { SortlevelComponent } from './sortlevel/sortlevel.component';
 import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
 import { AuthGuard } from './AuthGuard';
+import { SignupComponent } from './signup/signup.component';
 // import { TempformComponent } from 'tempform/tempform.component';
 
  
@@ -33,7 +34,8 @@ const routes: Routes = [
   {path:'stocklevel',component:StocklevelComponent},
   {path:'sortlevel',component:SortlevelComponent},
   {path:'accessdenied',component:AccessdeniedComponent},
-  //{path:'add',component:AddComponent},
+  {path:'oledb',component:OledbComponent},
+  {path:'signup',component:SignupComponent},
   //{path:'update',component:UpdateComponent},
   {
     path: 'add',

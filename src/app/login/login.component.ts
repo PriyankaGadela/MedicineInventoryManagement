@@ -18,6 +18,9 @@ import { AppUserCredentialsModel, TokenAndRole, LoginService} from '../login.ser
  
 
 export class LoginComponent {
+goToSignUp(){
+  this.router.navigate(['signup']);
+}
 message:string='';
   constructor(private service:LoginService,private router:Router){}
 
