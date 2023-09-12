@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractHttpCommunication, MedicineInventory } from '../HttpCommunication';
 
- 
-
 @Component({
   selector: 'app-delete',
   templateUrl: './delete.component.html',
@@ -26,6 +24,10 @@ export class DeleteComponent {
       });
     }
 
+    
+
+  
+    
     deleteMed(MedicineId:number){
       var confirmation=confirm('Delete Record?');
       if(confirmation==true)
@@ -40,11 +42,7 @@ export class DeleteComponent {
           error:err=>this.errors=err.message
         });
 
- 
-
       }
     }
-
- 
 
 }

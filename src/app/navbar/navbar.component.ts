@@ -8,15 +8,14 @@ import { MedicineInventory } from '../HttpCommunication';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  MedicineInventories!: MedicineInventory[];
-  errors!: string;
-  isLoggedIn: string | null = "";
+  isLoggedIn: boolean=false;//string | null = "";
   loginrole: string | null = "";
   constructor(private router: Router,){}
   ngOnInit(){
-    this.isLoggedIn = sessionStorage.getItem('token');
+    this.isLoggedIn = sessionStorage.getItem('token')==null? false:true;
     this.loginrole = sessionStorage.getItem("role");
   }
+  ngAfterViewChanged(){}
   logout(){
     sessionStorage.clear();
     this.router.navigate([""]);

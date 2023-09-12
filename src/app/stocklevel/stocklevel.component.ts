@@ -1,10 +1,6 @@
-
-
 import { Component, OnInit } from '@angular/core';
 
 import { AbstractHttpCommunication, MedicineInventory } from '../HttpCommunication';
-
- 
 
 @Component({
 
@@ -24,19 +20,13 @@ export class StocklevelComponent implements OnInit {
 
   errors: string = '';
 
- 
-
   constructor(private service: AbstractHttpCommunication) {}
-
- 
 
   ngOnInit(): void {
 
     this.loadMedicinesReachingCriticalStock();
 
   }
-
- 
 
   loadMedicinesReachingCriticalStock(): void {
 
@@ -57,5 +47,4 @@ export class StocklevelComponent implements OnInit {
     });
 
   }
-
 }

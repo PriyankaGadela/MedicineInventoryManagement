@@ -67,7 +67,7 @@ export class SignupComponent {
         },
         error: (err) => {
           this.statusDetails = 'An error occurred during registration.';
-          console.error(err); // Log the error for debugging
+          console.error(err); 
         },
       });
     }

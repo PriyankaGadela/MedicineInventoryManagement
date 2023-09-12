@@ -15,13 +15,15 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 //import { SearchnameComponent } from './searchname/searchname.component';
 import { CategorynameComponent } from './categoryname/categoryname.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { OperationsComponent } from './operations/operations.component';
-import { StocklevelComponent } from './stocklevel/stocklevel.component';
-import { ExpiryComponent } from './expiry/expiry.component';
+//import { OperationsComponent } from './operations/operations.component';
 import { DeleteComponent } from './delete/delete.component';
+import { ExpiryComponent } from './expiry/expiry.component';
+import { StocklevelComponent } from './stocklevel/stocklevel.component';
 import { AccessdeniedComponent } from './accessdenied/accessdenied.component';
 import { SortlevelComponent } from './sortlevel/sortlevel.component';
 import { SearchComponent } from './search/search.component';
+import { AddComponent } from './add/add.component';
+import { UpdateComponent } from './update/update.component';
 import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
@@ -35,13 +37,16 @@ import { SignupComponent } from './signup/signup.component';
     //SearchnameComponent,
     CategorynameComponent,
     NavbarComponent,
-    OperationsComponent,
-    StocklevelComponent,
-    ExpiryComponent,
+    //OperationsComponent,
     DeleteComponent,
+    ExpiryComponent,
+    StocklevelComponent,
+    AccessdeniedComponent,
     SortlevelComponent,
     SearchComponent,
-    SignupComponent
+    SignupComponent,
+    AddComponent,
+    UpdateComponent
 
   ],
   imports: [

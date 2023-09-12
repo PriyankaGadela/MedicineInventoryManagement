@@ -1,22 +1,14 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 
- 
-
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
 
- 
-
   constructor(private router: Router) { }
 
- 
-
   canActivate(): boolean {
-
- 
 
     if (sessionStorage.getItem('role') === 'Admin') {
         return true; // Allow access
@@ -25,8 +17,6 @@ export class AuthGuard implements CanActivate {
         this.router.navigate(['/access-denied']);
         return false;
       }
-
- 
 
         // let token=sessionStorage.getItem('token');
         // let role=sessionStorage.getItem('role');

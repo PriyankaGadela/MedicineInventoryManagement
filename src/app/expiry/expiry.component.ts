@@ -1,7 +1,5 @@
 // import { Component } from '@angular/core';
 
- 
-
 // @Component({
 //   selector: 'app-expiry',
 //   templateUrl: './expiry.component.html',
@@ -9,13 +7,9 @@
 // })
 // export class ExpiryComponent {
 
- 
-
 // }
 import { Component, OnInit } from '@angular/core';
 import { AbstractHttpCommunication, MedicineInventory } from '../HttpCommunication';
-
- 
 
 @Component({
   selector: 'app-expiry',
@@ -26,6 +20,8 @@ export class ExpiryComponent implements OnInit {
   expiringMeds: MedicineInventory[] = [];
   errors: string = '';
 
+ // constructor(private service: AbstractHttpCommunication) {}
+
  
 
   constructor(private service: AbstractHttpCommunication) {}
@@ -35,8 +31,6 @@ export class ExpiryComponent implements OnInit {
   ngOnInit(): void {
     this.loadExpiringMeds();
   }
-
- 
 
   loadExpiringMeds(): void {
     this.service.GetMedicinesExpiringNextMonth().subscribe({

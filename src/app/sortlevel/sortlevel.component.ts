@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractHttpCommunication, MedicineInventory } from '../HttpCommunication';
 
- 
-
 @Component({
   selector: 'app-sortlevel',
   templateUrl: './sortlevel.component.html',
@@ -18,21 +16,19 @@ export class SortlevelComponent {
     ngOnInit() {
       this. GetMedicines();
     }
-
+  
     GetMedicines(): void {
       this.service. GetMedicines().subscribe({
         next: (result) => (this.MedicineInventories = result),
         error: (err) => (this.errors = err.message),
       });
     }
-
+  
     sortMedicines(sortBy: string): void {
       this.service.sortMedicines(sortBy).subscribe({
         next: (result) => (this.MedicineInventories = result),
         error: (err) => (this.errors = err.message),
       });
     }
-
- 
 
 }
