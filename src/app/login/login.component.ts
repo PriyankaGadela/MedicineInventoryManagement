@@ -37,12 +37,14 @@ message:string='';
         // if(sessionStorage.getItem("role") == "Manager") {
         //   this.router.navigate(['/operations']);
         // }
-       // alert(JSON.stringify(result.body));
+       
       },
       error:(err: { message: string; })=>this.message=err.message
     });
+      
   }
 }
+
 
 
 

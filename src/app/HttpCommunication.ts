@@ -4,6 +4,14 @@ import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
 export class MedicineInventory{
     constructor(public medicineId:number, public medicineName:string, public categoryId:number,public expirydate:Date,public stocklevel:number,public price:number){}
 }
+export class appUser {
+    constructor(
+      public userName: string,
+      
+      public userPass: string,
+      public role:string
+    ) {}
+  }
 
 export abstract class AbstractHttpCommunication
 {
@@ -19,14 +27,17 @@ export abstract class AbstractHttpCommunication
     abstract AddMedicines(md:MedicineInventory):Observable<object>;
     abstract UpdateMedicines(md:MedicineInventory):Observable<object>;
     abstract GetMedicinesExpiringNextMonth(): Observable<MedicineInventory[]>;
+    abstract sortMedicines(sortBy: string): Observable<MedicineInventory[]>
     abstract GetMedicinesReachingCriticalStock(criticalStockLevel: number): Observable<MedicineInventory[]>;
-    abstract sortMedicines(sortBy: string): Observable<MedicineInventory[]>;
-    abstract ReadOleDbData(): Observable<MedicineInventory[]>;
     abstract SignUp(
         userName: string,
         password: string,
         role: string
       ): Observable<object>;
+ 
+
+ 
+
    // abstract getTokenAndAccessProtectedResource():Observable<HttpResponse<TokenAndRole>>
     // abstract getMonths():Observable<string[]>;
 
@@ -86,6 +97,7 @@ export class HttpCommunication extends AbstractHttpCommunication{
         
         return result;
     }
+
     override SignUp(
         userName: string,
         password: string,
@@ -100,10 +112,12 @@ export class HttpCommunication extends AbstractHttpCommunication{
         alert(result);
         return result;
       }
+      
+
     override sortMedicines(sortBy: string): Observable<MedicineInventory[]> {
         const path = `${this.url}/MedicineInventories/Sorting?sortBy=${sortBy}`;
         const headers = { headers: new HttpHeaders({ observe: "response" }) };
-    
+
         return this.client.get<MedicineInventory[]>(path, headers);
     }
       
@@ -120,16 +134,11 @@ export class HttpCommunication extends AbstractHttpCommunication{
     }
     override GetMedicinesReachingCriticalStock(criticalStockLevel: number): Observable<MedicineInventory[]> {
         const path = `${this.url}/MedicineInventories/CriticalStock/${criticalStockLevel}`;
-        const headers = { headers: new HttpHeaders({ observe: 'response' }) };
-      
+       
+       const headers = { headers: new HttpHeaders({ observe: 'response' }) };
+
         return this.client.get<MedicineInventory[]>(path, headers);
     }
-    override ReadOleDbData(): Observable<MedicineInventory[]> {
-        const path = `${this.url}/ReadExcel`; // Adjust the endpoint as needed
-        const headers = { headers: new HttpHeaders({ observe: "response" }) };
-        return this.client.get<MedicineInventory[]>(path, headers);
-      }
-    
     
       
 

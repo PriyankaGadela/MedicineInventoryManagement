@@ -50,7 +50,9 @@ const routes: Routes = [
   {
     path: 'access-denied',
     component: AccessdeniedComponent // Create this component to display an access denied message
-  }
+  },
+  {path: 'signup', component: SignupComponent}
+ 
 
   // {path:'temp',component:TempformComponent}
 ];

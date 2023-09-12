@@ -1,0 +1,37 @@
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #000;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #48b5f0 !important; /* Ocean Blue header background with !important */
+    color: white; /* Set font color to white */
+}
+
+th:last-child,
+td:last-child {
+    border-right: none;
+} 
+
+.last-column {
+    width: 100px; /* Adjust the width as needed */
+    /* You can also use a specific width value, such as pixels (px) or percentage (%) */
+}
+
+/* th:not(:last-child),
+td:not(:last-child) {
+    border-right: 1px solid #000;
+} */
+
+
+tr:nth-child(even) {
+    background-color: #cec5c5; /* Light gray background for even rows */
+}

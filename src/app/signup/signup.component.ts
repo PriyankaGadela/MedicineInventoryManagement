@@ -3,8 +3,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AbstractHttpCommunication } from '../HttpCommunication';
 
- 
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -17,8 +15,6 @@ export class SignupComponent {
   frmGroup: FormGroup;
   statusDetails: string = '';
 
- 
-
   constructor(
     private router: Router,
     private service: AbstractHttpCommunication
@@ -30,7 +26,7 @@ export class SignupComponent {
         Validators.pattern('^[a-zA-Z ]{3,20}$'),
       ])
     );
-
+    
     this.pass = new FormControl(
       '',
       Validators.compose([
@@ -41,8 +37,6 @@ export class SignupComponent {
       ])
     );
 
- 
-
     this.role = new FormControl(
       '',
       Validators.compose([
@@ -50,16 +44,12 @@ export class SignupComponent {
       ])
     );
 
- 
-
     this.frmGroup = new FormGroup({
       uname: this.uname,
       pass: this.pass,
       role: this.role
     });
   }
-
- 
 
   submit(): void {
     if (this.frmGroup.invalid) {
@@ -77,10 +67,9 @@ export class SignupComponent {
         },
         error: (err) => {
           this.statusDetails = 'An error occurred during registration.';
-          console.error(err); // Log the error for debugging
+          console.error(err); 
         },
       });
     }
   }
 }
-

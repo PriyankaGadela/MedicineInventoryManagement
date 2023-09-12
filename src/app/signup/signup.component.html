@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 <div class="navbar">
@@ -77,11 +78,91 @@
 </div>
 
 </form>
+=======
+<div class="navbar">
+    <h1></h1>
+</div>
+<div class="signup-container">
+    <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-6" >
+    <form  action="#" method="post">
+        
+            <div class="signup-ele "  style="width:300px;padding:20px;background-color:#3eb0fc;">
+                <img src="/assets/img.png" style="margin-left:82px" alt="Logo">
+                <form [formGroup]="frmGroup" (ngSubmit)="submit()">
+                    <div class="form-group">
+                
+                    <input type="text" [formControl]="uname"  style="margin-left:30px" id="username" name="username" placeholder="username" />
+                
+                    <span
+                        style="color: red"
+                        [innerText]="uname.dirty && uname.invalid && uname.errors?.['required'] ?'Name is Required':''"
+                    >
+                    </span>
+                    <span
+                        style="color: red"
+                        [innerText]="uname.dirty && uname.invalid && uname.errors?.['pattern'] ?'Pattern Mismatch':''"
+                    ></span>
+                    
+                        
+                    </div>        
+            
+                    <div class="form-group">
+                
+                    <input type="text" [formControl]="pass"  style="margin-left:30px" id="password" name="password" placeholder="password"/>
+                            
+                    <span
+                        style="color: red"
+                        [innerText]="pass.dirty && pass.invalid && pass.errors?.['required'] ?'Password is Required':''"
+                        >
+                    </span>
+                    <span
+                        style="color: red"
+                        [innerText]="pass.dirty && pass.errors?.['pattern'] ? 'Password must contain At least 8 characters in length, Lowercase letters, Uppercase letters, Numbers, Special characters' : ''">
+                    </span>
+                    
+                    </div>
+                    <div class="form-group">
+                        <input type="text" [formControl]="role" style="margin-left:30px" id="role" name="role" placeholder="Role" />
+                        
+                        <span
+                            style="color: red"
+                            [innerText]="role.dirty && role.invalid && role.errors?.['required'] ?'Role is Required':''"
+                        >
+                        </span>
+                       <span
+                            style="color: red"
+                            [innerText]="role.dirty && role.invalid && role.errors?.['pattern'] ?'Pattern Mismatch':''"
+                        ></span>
+                        
+                        <br />
+                            <button type="submit" style="margin-left:100px;background-color: #53B2AB;" class="btn btn-primary btn-block">Submit</button>
+                    </div>
+                </form>
+                <!-- <div class="form-group">
+                    <input type="text" style="margin-left:30px" id="username" name="username" placeholder="username" #uid name="username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" style="margin-left:30px" id="password" name="password" placeholder="Password" #pwd password="password" required>
+                </div>
+                <button type="submit" style="margin-left:100px;background-color: #53B2AB;" class="btn btn-primary btn-block"
+                (click)="getToken(uid.value,pwd.value)">Login</button>
+                <p>Create an Account? <br />
+                    
+                    <a [routerLink]="['/signup']">Sign Up</a>
+                </p>
+                                 -->
+            </div>
+        
+    </form>
+>>>>>>> 0e99bddb53649afab5f18ef9c04a597f83ac0175
 </div>
 <div class="col-md-4"></div>
 </div>
 </div>
 
+<<<<<<< HEAD
  
 
 <!-- <body>
@@ -163,3 +244,80 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 -->
+=======
+<!-- <body>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">Sign Up</h3>
+                    </div>
+                    <div class="card-body">
+                        
+                        <form [formGroup]="frmGroup" (ngSubmit)="submit()">
+                            <label>Name</label>
+                            <br />
+                            <input type="text" [formControl]="uname" />
+                        
+                            <span
+                                style="color: red"
+                                [innerText]="uname.dirty && uname.invalid && uname.errors?.['required'] ?'Name is Required':''"
+                            >
+                            </span>
+                            <span
+                                style="color: red"
+                                [innerText]="uname.dirty && uname.invalid && uname.errors?.['pattern'] ?'Pattern Mismatch':''"
+                            ></span>
+                        
+                            <br />
+                        
+                            
+            
+                            <label>Password</label>
+                            <br />
+                            <input type="text" [formControl]="pass" />
+                            
+                            <span
+                                style="color: red"
+                                [innerText]="pass.dirty && pass.invalid && pass.errors?.['required'] ?'Email is Required':''"
+                            >
+                            </span>
+                            <span
+                                style="color: red"
+                                [innerText]="pass.dirty && pass.errors?.['pattern'] ? 'Password must contain At least 8 characters in length, Lowercase letters, Uppercase letters, Numbers, Special characters' : ''">
+                            </span>
+                            <br />
+                            <label>Role</label>
+                            <br />
+                            <input type="text" [formControl]="role" />
+                        
+                            <span
+                                style="color: red"
+                                [innerText]="role.dirty && role.invalid && role.errors?.['required'] ?'Role is Required':''"
+                            >
+                            </span>
+                            <span
+                                style="color: red"
+                                [innerText]="role.dirty && role.invalid && role.errors?.['pattern'] ?'Pattern Mismatch':''"
+                            ></span>
+                        
+                            <br />
+                            <button type="submit">Sign Up</button>
+                        </form>
+                        <div *ngIf="statusDetails" class="error-message">{{ statusDetails }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+ -->
+>>>>>>> 0e99bddb53649afab5f18ef9c04a597f83ac0175

@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AddUsers } from './signup/signup.component';
-
- 
+//import { AddUsers } from './signup/signup.component';
 
  
 
@@ -17,8 +15,6 @@ export class User{
 
  
 
- 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -26,17 +22,11 @@ export class UserService {
 
  
 
- 
-
   private url = "http://localhost:5015"; // Replace with your API endpoint
 
  
 
- 
-
   constructor(private client: HttpClient) {}
-
- 
 
  
 
@@ -46,11 +36,7 @@ export class UserService {
     var result=this.client.post(path,user,{headers:head,observe:'response'});
     return result;
 
- 
-
   }
-
- 
 
  
 
@@ -59,11 +45,8 @@ export class UserService {
 
  
 
- 
-
     const head=new HttpHeaders({'content-type':'application/json'});
     var result = this.client.get(path,{headers:head,observe:'response'});
     return result;
   }
 }
-

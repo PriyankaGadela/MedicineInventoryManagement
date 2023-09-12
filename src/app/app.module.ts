@@ -21,6 +21,7 @@ import { ExpiryComponent } from './expiry/expiry.component';
 import { StocklevelComponent } from './stocklevel/stocklevel.component';
 import { AccessdeniedComponent } from './accessdenied/accessdenied.component';
 import { SortlevelComponent } from './sortlevel/sortlevel.component';
+import { SearchComponent } from './search/search.component';
 import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
 import { OledbComponent } from './oledb/oledb.component';
@@ -48,6 +49,8 @@ import { SignupComponent } from './signup/signup.component';
     StocklevelComponent,
     AccessdeniedComponent,
     SortlevelComponent,
+    SearchComponent,
+    SignupComponent,
     AddComponent,
     UpdateComponent,
     OledbComponent,
