@@ -101,6 +101,10 @@
                     </div>
                     <button type="submit" style="margin-left:100px;background-color: #53B2AB;" class="btn btn-primary btn-block"
                     (click)="getToken(uid.value,pwd.value)">Login</button>
+                    <p>Create an Account? <br />
+                        
+                        <a [routerLink]="['/signup']">Sign Up</a>
+                    </p>                    
                 </div>
             
         </form>

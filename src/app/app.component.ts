@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, NavigationEnd } from '@angular/router';
 
  
@@ -15,8 +16,9 @@ export class AppComponent {
  
 
   constructor(private router: Router) {}
+  
+  
 
- 
 
   ngOnInit() {
     // Listen to route changes
@@ -32,6 +34,6 @@ export class AppComponent {
 
   // Check if the current route is the login page
   isLoginPage(): boolean {
-    return this.router.url === '/login';
+    return this.router.url === '/login' || this.router.url === '/signup';
   }
 }

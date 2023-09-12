@@ -4,6 +4,14 @@ import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
 export class MedicineInventory{
     constructor(public medicineId:number, public medicineName:string, public categoryId:number,public expirydate:Date,public stocklevel:number,public price:number){}
 }
+export class appUser {
+    constructor(
+      public userName: string,
+      
+      public userPass: string,
+      public role:string
+    ) {}
+  }
 
 export abstract class AbstractHttpCommunication
 {
@@ -19,7 +27,11 @@ export abstract class AbstractHttpCommunication
     abstract UpdateMedicines(md:MedicineInventory):Observable<object>;
     abstract GetMedicinesExpiringNextMonth(): Observable<MedicineInventory[]>;
     abstract GetMedicinesReachingCriticalStock(criticalStockLevel: number): Observable<MedicineInventory[]>;
-
+    abstract SignUp(
+        userName: string,
+        password: string,
+        role: string
+      ): Observable<object>;
  
 
  
@@ -86,13 +98,27 @@ export class HttpCommunication extends AbstractHttpCommunication{
         return result;
     }
 
-    override sortMedicines(sortBy:String): Observable<MedicineInventory[]>
-    {
-        let path=`${this.url}/filter?sortBy=${sortBy}`;
-        const headers={headers:new HttpHeaders({observe:'response'})};
-        var result=this.client.get<MedicineInventory[]>(path,headers);
-
+    override SignUp(
+        userName: string,
+        password: string,
+        role: string,
+      ): Observable<object> {
+        const url = `${this.url}/SignUp/${userName}/${password}/${role}`;
+        const headers = new HttpHeaders({ 'content-type': 'application/json' });
+        var result = this.client.post(url, {
+          headers: headers,
+          observe: 'response',
+        });
+        alert(result);
         return result;
+      }
+      
+
+      override sortMedicines(sortBy: string): Observable<MedicineInventory[]> {
+        const path = `${this.url}/MedicineInventories/Sorting?sortBy=${sortBy}`;
+        const headers = { headers: new HttpHeaders({ observe: "response" }) };
+
+        return this.client.get<MedicineInventory[]>(path, headers);
     }
 
     override DeleteMedicines(medicineId: number): Observable<object> {
@@ -100,15 +126,16 @@ export class HttpCommunication extends AbstractHttpCommunication{
         var response = this.client.delete(path,{observe:'response'});
         return response;
     }
-    GetMedicinesExpiringNextMonth(): Observable<MedicineInventory[]> {
+    override GetMedicinesExpiringNextMonth(): Observable<MedicineInventory[]> {
         const path = `${this.url}/MedicinesExpiringNextMonth`;
         const headers = { headers: new HttpHeaders({ observe: 'response' }) };
 
         return this.client.get<MedicineInventory[]>(path, headers);
     }
-    GetMedicinesReachingCriticalStock(criticalStockLevel: number): Observable<MedicineInventory[]> {
+    override GetMedicinesReachingCriticalStock(criticalStockLevel: number): Observable<MedicineInventory[]> {
         const path = `${this.url}/MedicineInventories/CriticalStock/${criticalStockLevel}`;
-        const headers = { headers: new HttpHeaders({ observe: 'response' }) };
+       
+       const headers = { headers: new HttpHeaders({ observe: 'response' }) };
 
         return this.client.get<MedicineInventory[]>(path, headers);
       }

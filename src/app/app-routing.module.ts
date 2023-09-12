@@ -12,6 +12,7 @@ import { ExpiryComponent } from './expiry/expiry.component';
 import { AccessdeniedComponent } from './accessdenied/accessdenied.component';
 import { StocklevelComponent } from './stocklevel/stocklevel.component';
 import { AuthGuard } from './AuthGuard';
+import { SignupComponent } from './signup/signup.component';
 // import { TempformComponent } from 'tempform/tempform.component';
 
  
@@ -37,8 +38,8 @@ const routes: Routes = [
   {
     path: 'access-denied',
     component: AccessdeniedComponent // Create this component to display an access denied message
-  }
-
+  },
+  {path: 'signup', component: SignupComponent}
  
 
   // {path:'temp',component:TempformComponent}
